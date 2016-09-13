@@ -1,6 +1,7 @@
 const path = require('path')
-const join = path.join
 const createConfig = require('hjs-webpack')
+
+const join = path.join
 
 // Paths
 const root = path.resolve(__dirname)
@@ -23,7 +24,8 @@ const config = createConfig({
 // alias
 config.resolve.root = [src, nodeModules]
 config.resolve.alias = {
-  components: join(src, 'components')
+  components: join(src, 'components'),
+  router: join(src, 'router')
 }
 
 module.exports = config
