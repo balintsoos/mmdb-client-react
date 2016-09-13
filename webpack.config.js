@@ -6,7 +6,7 @@ const createConfig = require('hjs-webpack')
 const root = path.resolve(__dirname)
 const src = join(root, 'src')
 const dist = join(root, 'dist')
-const nodeModules = require(root, 'node_modules')
+const nodeModules = join(root, 'node_modules')
 
 // Env
 const NODE_ENV = process.env.NODE_ENV
