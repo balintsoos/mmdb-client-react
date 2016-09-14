@@ -1,8 +1,6 @@
-import React from 'react'
 import ReactDOM from 'react-dom'
-
-import App from 'components/App'
+import router from 'router'
 
 const root = document.querySelector('#root')
 
-ReactDOM.render(<App />, root)
+ReactDOM.render(router, root)
