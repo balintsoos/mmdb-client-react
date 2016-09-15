@@ -25,7 +25,7 @@ const config = createConfig({
 config.resolve.root = [src, nodeModules]
 config.resolve.alias = {
   components: join(src, 'components'),
-  router: join(src, 'router')
+  data: join(root, 'data')
 }
 
 module.exports = config
