@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 
-class Movies extends React.Component {
+class Movies extends Component {
   render() {
     return (
       <div className="Movies">{this.props.children}</div>
@@ -9,7 +9,7 @@ class Movies extends React.Component {
 }
 
 Movies.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 }
 
 export default Movies

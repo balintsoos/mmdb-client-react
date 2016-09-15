@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 
-class Movie extends React.Component {
+class Movie extends Component {
   render() {
     return (
-      <div>{this.props.params.id}</div>
+      <div>{this.state.title}</div>
     )
   }
 }
 
 Movie.propTypes = {
-  params: React.PropTypes.object
+  params: PropTypes.shape({
+    id: PropTypes.string
+  })
 }
 
 export default Movie

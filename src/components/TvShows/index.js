@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 
-class TvShows extends React.Component {
+class TvShows extends Component {
   render() {
     return (
       <div className="TvShows">{this.props.children}</div>
@@ -9,7 +9,7 @@ class TvShows extends React.Component {
 }
 
 TvShows.propTypes = {
-  children: React.PropTypes.node
+  children: PropTypes.node
 }
 
 export default TvShows
