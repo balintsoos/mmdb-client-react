@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-
+import Helmet from 'react-helmet'
 import Header from 'components/Header'
 
 class App extends Component {
@@ -7,6 +7,8 @@ class App extends Component {
     return (
       <div>
         <Header />
+
+        <Helmet titleTemplate="%s | MMDb" />
 
         {this.props.children}
       </div>
