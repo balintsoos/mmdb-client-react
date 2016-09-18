@@ -1,2 +1,2 @@
 # mmdb-client-react
-MMDb client made with React
+[MMDb](https://github.com/balintsoos/mmdb) client made with React
