@@ -11,7 +11,7 @@ class Category extends Component {
 
             return (
               <li key={item.id}>
-                <Link to={url}>{item.title}</Link>
+                <Link to={url}>{item.data.title}</Link>
               </li>
             )
           }, this)

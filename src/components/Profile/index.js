@@ -4,7 +4,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <h3>{this.props.profile.title}</h3>
+        <h3>{this.props.profile.data.title}</h3>
         <span>{this.props.profile.id}</span>
       </div>
     )
@@ -14,7 +14,9 @@ class Profile extends Component {
 Profile.propTypes = {
   profile: PropTypes.shape({
     id: PropTypes.number,
-    title: PropTypes.string
+    data: PropTypes.shape({
+      title: PropTypes.string
+    })
   })
 }
 
