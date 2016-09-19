@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import Nav from 'components/Nav'
+import { AppBar, IconButton } from 'react-toolbox'
 
-const Header = () => (
-  <header>
-    <h1>
-      <Link to="/">MMDb</Link>
-    </h1>
+class Header extends Component {
+  render() {
+    return (
+      <AppBar fixed>
+        <IconButton icon="menu" inverse onClick={this.props.toggleDrawer} />
 
-    <Nav />
-  </header>
-)
+        <Link to="/">MMDb</Link>
+      </AppBar>
+    )
+  }
+}
+
+Header.propTypes = {
+  toggleDrawer: PropTypes.func
+}
 
 export default Header

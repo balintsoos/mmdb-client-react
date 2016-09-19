@@ -1,6 +1,9 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_year_data"] }] */
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
+import { Button } from 'react-toolbox'
+
+import styles from './styles.scss'
 
 class Profile extends Component {
   render() {
@@ -22,8 +25,10 @@ class Profile extends Component {
         <p>{data.plot}</p>
         <p>{data.actors}</p>
 
-        <p><a href={data.imdburl}>Go to IMDb</a></p>
-        <p><a href={pbUrl}>Arrgh!</a></p>
+        <div className={styles.group}>
+          <Button href={data.imdburl} label="Go to IMDb" icon="movie" raised primary />
+          <Button href={pbUrl} label="Arrgh!" icon="movie" primary />
+        </div>
       </div>
     )
   }

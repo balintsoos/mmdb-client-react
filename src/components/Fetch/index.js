@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import ProgressBar from 'react-toolbox/lib/progress_bar'
 import connect from 'utils/apiConnector'
 
 class Fetch extends Component {
@@ -10,7 +11,7 @@ class Fetch extends Component {
   render() {
     if (this.props.fetch.pending) {
       return (
-        <div>Loading...</div>
+        <ProgressBar type="circular" mode="indeterminate" />
       )
     } else if (this.props.fetch.rejected) {
       return (
