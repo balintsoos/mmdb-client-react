@@ -1,6 +1,7 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_year_data"] }] */
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
+import { Button } from 'react-toolbox/lib/button'
 import Helmet from 'react-helmet'
 
 class Category extends Component {
@@ -20,6 +21,7 @@ class Category extends Component {
     return (
       <div>
         <Helmet title={`${this.props.params.category}`} />
+        <Button label="Hello World!" />
 
         <div className="category-item-list-wrapper">
           {this.props.category.map(item => this.renderListItem(item), this)}
