@@ -34,6 +34,7 @@
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "test": "npm run lint",
     "lint": "eslint .",
+    "deploy": "git subtree split --prefix public -b gh-pages",
     "devServer": "webpack-dev-server --progress --profile --colors --open"
   },
   "dependencies": {
