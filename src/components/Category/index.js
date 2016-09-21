@@ -1,18 +1,26 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_year_data"] }] */
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import Helmet from 'react-helmet'
+import { List, ListItem, ListSubHeader, ListDivider } from 'react-toolbox/lib/list'
 
 class Category extends Component {
-  renderListItem(item) {
-    const url = `${this.props.location.pathname}/view/${item.id}`
+  selectItem(id) {
+    const url = `${this.props.location.pathname}/view/${id}`
 
+    browserHistory.push(url)
+  }
+
+  renderListItem(item) {
     return (
-      <Link to={url} key={item.id}>
-        <div className="list-item">
-          <span>{`${item.data.title} (${item.data._year_data})`}</span>
-        </div>
-      </Link>
+      <ListItem
+        key={item.id}
+        avatar={item.data.poster}
+        caption={item.data.title}
+        legend={item.data._year_data}
+        rightIcon="star"
+        onClick={() => this.selectItem(item.id)}
+      />
     )
   }
 
@@ -21,9 +29,11 @@ class Category extends Component {
       <div>
         <Helmet title={`${this.props.params.category}`} />
 
-        <div className="category-item-list-wrapper">
+        <List selectable ripple>
+          <ListSubHeader caption={this.props.params.category} />
+          <ListDivider />
           {this.props.category.map(item => this.renderListItem(item), this)}
-        </div>
+        </List>
       </div>
     )
   }

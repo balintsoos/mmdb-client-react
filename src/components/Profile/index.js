@@ -1,7 +1,8 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_year_data"] }] */
 import React, { Component, PropTypes } from 'react'
 import Helmet from 'react-helmet'
-import { Button } from 'react-toolbox'
+import { Button } from 'react-toolbox/lib/button'
+import { Card, CardTitle, CardText, CardActions } from 'react-toolbox/lib/card'
 
 import styles from './styles.scss'
 
@@ -13,23 +14,29 @@ class Profile extends Component {
     const pbUrl = `${pbDomain}/search/${encodedTitle}/0/99/200`
 
     return (
-      <div>
+      <Card className={styles.wrapper}>
         <Helmet title={`${data.title}`} />
 
         <img src={data.poster} alt="poster" />
 
-        <h3>{data.title}</h3>
-        <p>{data._year_data}</p>
-        <p>{`${data.rating} (${data.votes} votes)`}</p>
-        <p>{data.genres}</p>
-        <p>{data.plot}</p>
-        <p>{data.actors}</p>
+        <div>
+          <CardTitle
+            title={data.title}
+            subtitle={data._year_data}
+          />
+          <CardText>{`${data.rating} (${data.votes} votes)`}</CardText>
+          <CardText>{data.genres}</CardText>
+          <CardText>{data.plot}</CardText>
+          <CardText>{data.actors}</CardText>
 
-        <div className={styles.group}>
-          <Button href={data.imdburl} label="Go to IMDb" icon="movie" raised primary />
-          <Button href={pbUrl} label="Arrgh!" icon="movie" primary />
+          <CardText>
+            <CardActions>
+              <Button href={data.imdburl} label="Go to IMDb" icon="movie" raised primary />
+              <Button href={pbUrl} label="Arrgh!" icon="movie" primary />
+            </CardActions>
+          </CardText>
         </div>
-      </div>
+      </Card>
     )
   }
 }

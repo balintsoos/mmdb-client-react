@@ -7,11 +7,11 @@ import styles from './styles.scss'
 const Navigation = () => (
   <Nav type="vertical" className={styles.nav}>
 
-    <Link to="/movies" activeStyle={{ color: 'red' }}>
+    <Link to="/movies">
       <NavItem label="Movies" icon="theaters" flat primary />
     </Link>
 
-    <Link to="/tvshows" activeStyle={{ color: 'red' }}>
+    <Link to="/tvshows">
       <NavItem label="TV Shows" icon="live_tv" flat primary />
     </Link>
 
