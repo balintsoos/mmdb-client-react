@@ -1,14 +1,15 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_year_data"] }] */
 import React, { Component, PropTypes } from 'react'
-import { browserHistory } from 'react-router'
+import hashHistory from 'react-router/lib/hashHistory'
 import Helmet from 'react-helmet'
 import { List, ListItem, ListSubHeader, ListDivider } from 'react-toolbox/lib/list'
+import labels from 'labels/categories'
 
 class Category extends Component {
   selectItem(id) {
     const url = `${this.props.location.pathname}/view/${id}`
 
-    browserHistory.push(url)
+    hashHistory.push(url)
   }
 
   renderListItem(item) {
@@ -25,12 +26,14 @@ class Category extends Component {
   }
 
   render() {
+    const categoryLabel = labels[this.props.params.category]
+
     return (
       <div>
-        <Helmet title={`${this.props.params.category}`} />
+        <Helmet title={categoryLabel} />
 
         <List selectable ripple>
-          <ListSubHeader caption={this.props.params.category} />
+          <ListSubHeader caption={categoryLabel} />
           <ListDivider />
           {this.props.category.map(item => this.renderListItem(item), this)}
         </List>

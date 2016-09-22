@@ -38,6 +38,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       components: path.join(src, 'components'),
+      labels: path.join(src, 'labels'),
       utils: path.join(src, 'utils')
     }
   },
