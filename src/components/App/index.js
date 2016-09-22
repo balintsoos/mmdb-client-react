@@ -11,7 +11,6 @@ class App extends Component {
     super(props)
 
     this.state = { drawerActive: false }
-    this.toggleDrawerActive = this.toggleDrawerActive.bind(this)
   }
 
   toggleDrawerActive() {
@@ -25,14 +24,14 @@ class App extends Component {
 
         <NavDrawer
           active={this.state.drawerActive}
-          onOverlayClick={this.toggleDrawerActive}
+          onOverlayClick={() => this.toggleDrawerActive()}
           permanentAt="lg"
         >
           <Navigation />
         </NavDrawer>
 
         <Panel>
-          <Header toggleDrawer={this.toggleDrawerActive} />
+          <Header toggleDrawer={() => this.toggleDrawerActive()} />
           <div className={styles.content}>
             {this.props.children}
           </div>
