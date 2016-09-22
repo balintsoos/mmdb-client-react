@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 import { AppBar, IconButton } from 'react-toolbox'
 
 class Header extends Component {

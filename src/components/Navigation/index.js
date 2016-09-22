@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 import { Navigation as Nav, Button as NavItem } from 'react-toolbox'
 
 import styles from './styles.scss'
